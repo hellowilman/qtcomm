@@ -10,6 +10,7 @@ test_comm::test_comm(QObject *parent) : QObject(parent)
     // handle the received data
    connect(&comm,SIGNAL(sigDataReceived(QByteArray)),
            this,SLOT(onDataReceived(QByteArray)));
+   // send data
    emit comm.sigSendDatagram("this message from MainWindows");
 }
 
